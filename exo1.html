@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><ul>
+        <strong>Exercice de montée en compétences sur Linux Server</strong>
+        <br>
+        <br>Objectifs:<br><br>
+        <li>Installer et configurer un serveur web Nginx</li>
+        <li>Gérer les utilisateurs et les permissions</li>
+        <li>Configurer une tâche planifiée</li>
+        <li>Sécuriser le serveur avec UFW (Uncomplicated Firewall)</li>
+        <li>Rechercher des fichiers et gérer l'espace disque</li>
+        <strong>Instructions détaillées:</strong>
+        <li>Installation de Nginx:</li>
+        <ul><li>Installez le serveur web Nginx.</li></ul>
+        <ul><li>Vérifiez que Nginx est actif et s'exécute au démarrage du système.</li></ul>
+        <ul><li>Création et gestion des utilisateurs:</li></ul>
+        <ul><li>Créez un utilisateur système nommé devuser avec /usr/sbin/nologin comme shell par défaut, et un répertoire d'accueil fictif.</li></ul>
+        <ul><li>Ajoutez cet utilisateur au groupe www-data.</li></ul>
+        <strong>Configuration de Nginx:</strong>
+        <li>Configurez un nouveau site virtuel sous Nginx. Utilisez /var/www/monsite comme racine du document et monsite.local comme nom de serveur.</li>
+        <li>Assurez-vous que le site est accessible en modifiant le fichier /etc/hosts sur le client.</li>
+        <strong>Gestion des permissions:</strong>
+        <ul><li>Changez le propriétaire du dossier /var/www/monsite pour que devuser soit le propriétaire et www-data le groupe.</li></ul>
+        <ul><li>Mettez en place des permissions permettant à devuser d'écrire dans le dossier, tout en permettant à Nginx de servir le contenu.</li></ul>
+        <strong>Configuration d'UFW (Uncomplicated Firewall):</strong>
+        <li>Activez UFW et configurez-le pour autoriser uniquement le trafic sur les ports 80 (HTTP) et 443 (HTTPS), ainsi que votre nouveau port SSH.</li>
+        <li><strong>Planification d'une tâche avec cron:</strong></li>
+        <li>Créez une tâche cron pour devuser qui nettoie le dossier /tmp tous les jours à minuit.</li>
+        <strong>Recherche de fichiers:</strong>
+        <li>Utilisez la commande find pour rechercher tous les fichiers modifiés dans les dernières 24 heures dans le répertoire /var/www.</li>
+        <strong>Gestion de l'espace disque:</strong>
+        <li>Trouvez les cinq dossiers qui prennent le plus d'espace sur votre serveur et listez-les avec leur taille.</li>
+        <strong>Livrables:</strong>
+        <li>Le fichier de configuration de votre site Nginx.</li>
+        <li>La commande utilisée pour créer devuser et le détail des permissions appliquées à /var/www/monsite.</li>
+        <li>La règle UFW pour limiter l'accès aux ports nécessaires.</li>
+        <li>La ligne de commande cron pour nettoyer /tmp.</li>
+        <li>Les commandes utilisées pour la recherche de fichiers et la gestion de l'espace disque, ainsi que leurs sorties.</li>
+    </ul></p>
+</body>
+</html>
